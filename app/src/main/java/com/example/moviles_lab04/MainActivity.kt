@@ -20,7 +20,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.layout.size
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +56,12 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             onCheckedChange = { checked = it }
         )
         Text(text = if (checked) "Marcado ✅" else "No marcado ❌")
+        Text(text = "=== Image ===")
+        Image(
+            painter = painterResource(id = R.drawable.android),
+            contentDescription = "Mi imagen",
+            modifier = Modifier.size(150.dp)
+        )
     }
 }
 
